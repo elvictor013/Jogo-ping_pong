@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GabGames - Portal de Jogos</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+}
+
+header{
+    background:#111827;
+    padding:20px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 15px rgba(0,0,0,.3);
+}
+
+.logo{
+    font-size:2rem;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#3b82f6;
+}
+
+.search{
+    padding:12px;
+    width:300px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+}
+
+.hero{
+    height:500px;
+    background:
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.7)),
+    url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1920');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+}
+
+.hero-content{
+    margin-left:8%;
+    max-width:600px;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.btn{
+    display:inline-block;
+    background:#3b82f6;
+    color:white;
+    text-decoration:none;
+    padding:15px 30px;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#2563eb;
+}
+
+.section{
+    padding:60px 5%;
+}
+
+.section-title{
+    font-size:2rem;
+    margin-bottom:30px;
+}
+
+.games-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#1e293b;
+    border-radius:15px;
+    overflow:hidden;
+    transition:.3s;
+    cursor:pointer;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#cbd5e1;
+    margin-bottom:15px;
+}
+
+.play-btn{
+    display:block;
+    text-align:center;
+    background:#3b82f6;
+    padding:12px;
+    border-radius:8px;
+    color:white;
+    text-decoration:none;
+}
+
+.play-btn:hover{
+    background:#2563eb;
+}
+
+.categories{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.category{
+    background:#1e293b;
+    padding:10px 20px;
+    border-radius:30px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.category:hover{
+    background:#3b82f6;
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    background:#111827;
+    margin-top:50px;
+}
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .search{
+        width:100%;
+    }
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+
+    <div class="logo">
+        Gab<span>Games</span>
+    </div>
+
+    <input
+        type="text"
+        class="search"
+        placeholder="Pesquisar jogo..."
+        id="searchInput">
+
+</header>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Portal de Jogos</h1>
+
+        <p>
+            Jogue gratuitamente diversos jogos diretamente do navegador.
+            Desafie seus amigos, bata recordes e divirta-se.
+        </p>
+
+        <a href="#games" class="btn">
+            Ver Jogos
+        </a>
+
+    </div>
+
+</section>
+
+<section class="section" id="games">
+
+    <h2 class="section-title">
+        Jogos Disponíveis
+    </h2>
+
+    <div class="categories">
+        <div class="category">Todos</div>
+        <div class="category">Puzzle</div>
+        <div class="category">Ação</div>
+        <div class="category">Estratégia</div>
+        <div class="category">Arcade</div>
+    </div>
+
+    <div class="games-grid" id="gamesGrid">
+
+        <div class="card">
+            <img src="https://picsum.photos/400/250?1">
+            <div class="card-content">
+                <h3>Jogo da Velha</h3>
+                <p>Desafie seus amigos em partidas clássicas.</p>
+                <a href="jogos/velha.html" class="play-btn">
+                    Jogar
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/400/250?2">
+            <div class="card-content">
+                <h3>Snake</h3>
+                <p>Coma as frutas e aumente sua pontuação.</p>
+                <a href="jogos/snake.html" class="play-btn">
+                    Jogar
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/400/250?3">
+            <div class="card-content">
+                <h3>Pong</h3>
+                <p>Reviva o clássico dos videogames.</p>
+                <a href="jogos/pong.html" class="play-btn">
+                    Jogar
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/400/250?4">
+            <div class="card-content">
+                <h3>Forca</h3>
+                <p>Adivinhe a palavra antes do tempo acabar.</p>
+                <a href="jogos/forca.html" class="play-btn">
+                    Jogar
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/400/250?5">
+            <div class="card-content">
+                <h3>Quiz</h3>
+                <p>Teste seus conhecimentos.</p>
+                <a href="jogos/quiz.html" class="play-btn">
+                    Jogar
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/400/250?6">
+            <div class="card-content">
+                <h3>Memória</h3>
+                <p>Encontre os pares corretos.</p>
+                <a href="jogos/memoria.html" class="play-btn">
+                    Jogar
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <h3>GabGames</h3>
+
+    <p>
+        Sua plataforma de jogos online.
+    </p>
+
+    <br>
+
+    <p>
+        © 2026 Todos os direitos reservados.
+    </p>
+
+</footer>
+
+<script>
+
+const searchInput =
+document.getElementById('searchInput');
+
+searchInput.addEventListener('keyup', function(){
+
+    let filter =
+    this.value.toLowerCase();
+
+    let cards =
+    document.querySelectorAll('.card');
+
+    cards.forEach(card=>{
+
+        let title =
+        card.querySelector('h3')
+        .textContent
+        .toLowerCase();
+
+        if(title.includes(filter)){
+            card.style.display='block';
+        }
+        else{
+            card.style.display='none';
+        }
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
