@@ -1,3 +1,3 @@
 # Jogo-ping_pong
 
-manual do jogo
+# manual do jogo
